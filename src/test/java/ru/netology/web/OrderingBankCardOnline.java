@@ -1,10 +1,7 @@
 package ru.netology.web;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.List;
-gitgi
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CallbackTest {
@@ -46,8 +43,10 @@ class CallbackTest {
         elements.get(1).sendKeys("+79219998877");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__content")).click();
-       // String text = driver.findElement(By.className("alert-success")).getText();
-       // assertEquals("Ваша заявка успешно отправлена!", text.trim());
+        String actual = driver.findElement(By.cssSelector("[data-test-id = order-success]")).getText().trim();
+
+        String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
+        Assertions.assertEquals(expected, actual);
     }
 
 }
