@@ -37,7 +37,7 @@ class CallbackTest {
     }
 
     @Test
-    void shouldTestV1() {
+    void positiveTest() {
         driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Иван Смирнов");
         driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("+79111111111");
         driver.findElement(By.className("checkbox__box")).click();
