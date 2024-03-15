@@ -1,1 +1,1 @@
-[![.github/workflows/gradle.yml](https://github.com/msuxodolov/Web/actions/workflows/gradle.yml/badge.svg)](https://github.com/msuxodolov/Web/actions/workflows/gradle.yml)
+[![Java CI with Gradle](https://github.com/msuxodolov/Web/actions/workflows/gradle.yml/badge.svg)](https://github.com/msuxodolov/Web/actions/workflows/gradle.yml)
