@@ -83,4 +83,17 @@ class NegativeTest {
         Assertions.assertEquals(expected, actual);
 
     }
+
+    @Test
+    void negativeNotTextPhoneTest() {
+        driver.findElement(By.cssSelector("[data-test-id ='name'] input")).sendKeys("Иван Смирнов");
+        driver.findElement(By.cssSelector("[data-test-id ='phone'] input")).sendKeys("");
+        driver.findElement(By.className("checkbox__box")).click();
+        driver.findElement(By.className("button__content")).click();
+        String actual = driver.findElement(By.cssSelector("[data-test-id = phone].input_invalid .input__sub")).getText().trim();
+
+        String expected = "Поле обязательно для заполнения";
+        Assertions.assertEquals(expected, actual);
+
+    }
 }
